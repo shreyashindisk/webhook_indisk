@@ -22,6 +22,13 @@ app.post("/hooks/payment_success", function (req, res) {
   }
   res.status(200).json({
     status: 200,
+    body: { message: "ok" },
+  });
+});
+
+app.get("/hooks/payment_success", function (req, res) {
+  res.status(200).json({
+    status: 200,
     headers: { "test-header": "value" },
     body: { key: "F346EB518238430EAA4615ACAA93CCAE42BCE2B0" },
   });
