@@ -3,6 +3,12 @@ const express = require("express");
 const WebSocket = require("ws");
 
 const app = express();
+const cors = require("cors");
+var corsOptions = {
+  origin: "*",
+};
+
+app.use(cors(corsOptions));
 var myWs;
 
 app.get("/", function (req, res) {
