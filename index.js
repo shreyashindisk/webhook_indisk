@@ -29,7 +29,7 @@ app.post("/hooks/payment_success", function (req, res) {
 app.get("/hooks/payment_success", function (req, res) {
   res.status(200).json({
     // key: "F346EB518238430EAA4615ACAA93CCAE42BCE2B0",
-    key: "YWY1NGE0MzYtMWU0Yy00NDBjLThlZDYtNzZiMzY0NmIxNzRmOjFVN0QzSzA1VzJuOGpjU2k5NDdmMTRQODhyZDU4VA==",
+    key: "378EAB5A490F2D3A3B258BE57D9447ECF0976017",
   });
 });
 
