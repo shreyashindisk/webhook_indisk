@@ -26,8 +26,28 @@ app.post("/hooks/payment_success", function (req, res) {
   });
 });
 
+app.post("/hooks/payment_failure", function (req, res) {
+  console.log("Payment failure");
+  if (myWs) {
+    myWs.send("Payment failure");
+  }
+  res.status(200).json({
+    status: 200,
+    body: { message: "ok" },
+  });
+});
+
 app.get("/hooks/payment_success", function (req, res) {
   res.status(200).json({
+    //first is dev key, second is prod key
+    // key: "F346EB518238430EAA4615ACAA93CCAE42BCE2B0",
+    key: "378EAB5A490F2D3A3B258BE57D9447ECF0976017",
+  });
+});
+
+app.get("/hooks/payment_failure", function (req, res) {
+  res.status(200).json({
+    //first is dev key, second is prod key
     // key: "F346EB518238430EAA4615ACAA93CCAE42BCE2B0",
     key: "378EAB5A490F2D3A3B258BE57D9447ECF0976017",
   });
